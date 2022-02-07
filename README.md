@@ -17,3 +17,36 @@ cd GobData-Track
 mkdir data
 mkdir db
 touch create_table.sql
+
+## Create database and connect to the PostgreSQL database server via psql
+
+- Connecto to postgres
+
+```bash
+sudo -i -u postgres
+```
+
+- Access the PostgreSQL
+
+```bash
+psql
+```
+
+- Create database (db)
+
+```bash
+create database govdb;
+
+    CREATE DATABASE
+    postgres=#
+```
+
+- Connect to database (db)
+
+```bash
+\c govdb
+
+    You are now connected to database "govdb" as user "postgres".
+```
+
+exit
