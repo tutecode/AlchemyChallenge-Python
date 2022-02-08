@@ -18,9 +18,9 @@ mkdir data
 mkdir db
 touch create_table.sql
 
-## Create database and connect to the PostgreSQL database server via psql
+## Create and connect to the PostgreSQL database server via psql
 
-- Connecto to postgres
+- Connect to postgres
 
 ```bash
 sudo -i -u postgres
@@ -49,4 +49,29 @@ create database govdb;
     You are now connected to database "govdb" as user "postgres".
 ```
 
+- If you want to exit posgresql
+
+```bash
 exit
+```
+
+## Create table
+
+```bash
+touch create_table.sql
+```
+
+- Normalizar toda la información de Museos, Salas de Cine y Bibliotecas
+Populares, para crear una única tabla que contenga:
+    - cod_localidad
+    - id_provincia
+    - id_departamento
+    - categoría
+    - provincia
+    - localidad
+    - nombre
+    - domicilio
+    - código postal
+    - número de teléfono
+    - mail
+    - web
