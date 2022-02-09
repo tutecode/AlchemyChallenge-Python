@@ -49,7 +49,7 @@ create database govdb;
     You are now connected to database "govdb" as user "postgres".
 ```
 
-- If you want to exit posgresql
+- If you want to exit postgresql
 
 ```bash
 exit
@@ -75,3 +75,18 @@ Populares, para crear una única tabla que contenga:
     - número de teléfono
     - mail
     - web
+
+
+## Install libraries
+
+- Create requirements.txt
+
+```bash
+mkdir requirements.txt
+```
+
+- Install libraries
+
+```bash
+pip3 install -r requirements.txt
+```
