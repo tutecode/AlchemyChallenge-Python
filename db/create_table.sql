@@ -1,4 +1,4 @@
-CREATE TABLE gov_cultural (
+CREATE TABLE govdb (
     cod_localidad INTEGER,
     id_provincia INTEGER,
     id_departamento INTEGER,
