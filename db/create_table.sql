@@ -1,4 +1,4 @@
-CREATE TABLE govdb (
+CREATE TABLE gov_db (
     cod_localidad INTEGER,
     id_provincia INTEGER,
     id_departamento INTEGER,
