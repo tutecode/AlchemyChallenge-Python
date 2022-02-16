@@ -1,7 +1,7 @@
 # AlchemyChallenge-Python
  Challenge Data Analytics - Python
 
-## Create Virtual ENV
+## 1. Create Virtual ENV
 
 1. Open Terminal
 2. cd Desktop
@@ -22,12 +22,12 @@ https://stackoverflow.com/questions/12728004/error-no-module-named-psycopg2-exte
 source env/bin/activate
 ```
  
-## Install libraries
+## 2. Install libraries
 
 - Create requirements.txt
 
 ```bash
-mkdir requirements.txt
+touch requirements.txt
 ```
 
 - Install libraries
@@ -37,7 +37,7 @@ pip3 install -r requirements.txt
 ```
 
 
-## Create and connect to the PostgreSQL database server via psql
+## 3. Create and connect to the PostgreSQL database server via psql
 
 - Connect to postgres
 
@@ -54,7 +54,7 @@ psql
 - Create database (db)
 
 ```bash
-create database gov_db;
+create database cultural;
 
     CREATE DATABASE
     postgres=#
@@ -63,7 +63,7 @@ create database gov_db;
 - Connect to database (db)
 
 ```bash
-\c gov_db
+\c cultural
 
     You are now connected to database "gov_db" as user "postgres".
 ```
@@ -74,10 +74,17 @@ create database gov_db;
 exit
 ```
 
+## 4. Run
 
-## Install libraries
+- Run on Terminal
 
-- Create requirements.txt
+```bash
+python3 main.py
+```
+
+## Connect to the PostgreSQL database using the psycopg2
+
+- Connect to (db)
 
 ```bash
 mkdir requirements.txt
