@@ -60,6 +60,12 @@ create database cultural;
     postgres=#
 ```
 
+- List of databases
+
+```bash
+\l
+```
+
 - Connect to database (db)
 
 ```bash
