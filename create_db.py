@@ -1,34 +1,84 @@
-import psycopg2
+# db.py
+# provides a connect() function that returns a SQLAlchemy connection to the database passed to config(); sample uses config() defaults. 
 
-#Establishing the connection
-conn = psycopg2.connect(
-   database="mydb", user='postgres', password='password', host='127.0.0.1', port= '5432'
-)
+from sqlalchemy import create_engine
+from sqlalchemy.orm import sessionmaker
+import pandas as pd
+from config import config
+import logging
 
-#Creating a cursor object using the cursor() method
-cursor = conn.cursor()
+from download_data import download_data
+from create_df_cultural import create_df_cultural
 
-#Doping EMPLOYEE table if already exists.
-cursor.execute("DROP TABLE IF EXISTS EMPLOYEE")
+## Logging
+logger = logging.getLogger(__name__)
+logger.setLevel(logging.INFO)
 
-#Creating table as per requirement
-sql ='''CREATE TABLE gov_db (
-    cod_localidad INTEGER,
-    id_provincia INTEGER,
-    id_departamento INTEGER,
-    categoria TEXT,
-    provincia TEXT,
-    localidad TEXT,
-    nombre TEXT,
-    domicilio TEXT,
-    cod_postal TEXT,
-    num_telefono INTEGER,
-    mail TEXT,
-    web TEXT
-)'''
+formatter = logging.Formatter('%(levelname)s:%(name)s:%(message)s')
 
-cursor.execute(sql)
-print("Table created successfully...")
-conn.commit()
-#Closing the connection
-conn.close()
+file_handler = logging.FileHandler('logs.log')
+file_handler.setLevel(logging.ERROR)
+file_handler.setFormatter(formatter)
+
+file_handler = logging.FileHandler('logs.log')
+file_handler.setFormatter(formatter)
+
+logger.addHandler(file_handler)
+
+## Create table and db
+def create_database():
+    """ Connect to the PostgreSQL database server """
+
+    try:
+        # read connection params
+        params = config()
+
+        conn_string = f"postgresql://{params['username']}:{params['password']}@{params['hostname']}:{params['port']}/{params['database']}"
+
+        # connect to PostgreSQL server
+        logger.info('Connecting...')
+
+        engine = create_engine(conn_string)
+        
+        # create df
+        df_museos = download_data('museos', 'https://datos.cultura.gob.ar/dataset/37305de4-3cce-4d4b-9d9a-fec3ca61d09f/resource/4207def0-2ff7-41d5-9095-d42ae8207a5d/download/museo.csv')
+        df_cines = download_data('cines', 'https://datos.cultura.gob.ar/dataset/37305de4-3cce-4d4b-9d9a-fec3ca61d09f/resource/392ce1a8-ef11-4776-b280-6f1c7fae16ae/download/cine.csv')
+        df_bibliotecas = download_data('bibliotecas', 'https://datos.cultura.gob.ar/dataset/37305de4-3cce-4d4b-9d9a-fec3ca61d09f/resource/01c6c048-dbeb-44e0-8efa-6944f73715d7/download/biblioteca_popular.csv')
+        
+        # create df_cultural --> to_sql
+        df_cultural = create_df_cultural(df_museos, df_cines, df_bibliotecas)
+        df_cultural.to_sql('cultural', con=engine, if_exists='replace')
+
+        # create df_registros_totales --> to_sql
+        df_registros = df_cultural.groupby(['Categoria']).size().reset_index(name='Total')
+        #print(df_registros)
+        logger.info(f"Cantidad de registros totales por categoría: \n{df_registros}")
+
+        logger.info('Cultural Table was created on PostgreSQL!')
+
+        """
+        ## create the session
+        #Session = sessionmaker(bind=engine)
+        #session = Session()
+        #
+        #Base = declarative_base()
+        """
+
+        connection = engine.connect()
+
+        ## read sql 
+        #cursor = connection
+        #sql="""select * from cultural"""
+        #query_results = cursor.execute(sql).fetchall()
+        #df = pd.DataFrame(query_results)
+        #print(df[:10])
+
+        logger.info('Connected to the database!')
+
+        #connection.close()
+        
+        #logger.info('Closed database.')
+        #connection.execute('CREATE TABLE IF NOT EXISTS products (product_name text, price number)')
+        return connection
+    except:
+        return logger.exception('Connection failed.')

@@ -1,4 +1,4 @@
-import db
+import create_db
 
 from sqlalchemy import Column, Integer, String, Float
 
@@ -17,7 +17,7 @@ from sqlalchemy import Column, Integer, String, Float
     web TEXT
 );"""
 
-class Cultural(db.Base):
+class Cultural(create_db.Base):
     __tablename__ = 'cultural'
 
     cod_localidad = Column(Integer)

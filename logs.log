@@ -1,0 +1,107 @@
+INFO:create_db:Connecting...
+INFO:download_data:Downloading data from "museos"
+INFO:download_data:Downloading data from "cines"
+INFO:download_data:Downloading data from "bibliotecas"
+INFO:create_df_cultural:DataFrame Cultural was created!
+INFO:create_db:Cultural Table was created on PostgreSQL!
+INFO:create_db:Connected to the database!
+INFO:create_db:Connecting...
+INFO:download_data:Downloading data from "museos"
+INFO:download_data:Downloading data from "cines"
+INFO:download_data:Downloading data from "bibliotecas"
+INFO:create_df_cultural:DataFrame Cultural was created!
+ERROR:create_db:Connection failed.
+Traceback (most recent call last):
+  File "/home/tutegomeze/Desktop/AlchemyChallenge-Python/create_db.py", line 53, in create_database
+    df_registros = df_cultural.groupby(['Categorias']).size()
+  File "/home/tutegomeze/Desktop/AlchemyChallenge-Python/env/lib/python3.8/site-packages/pandas/core/frame.py", line 7706, in groupby
+    return DataFrameGroupBy(
+  File "/home/tutegomeze/Desktop/AlchemyChallenge-Python/env/lib/python3.8/site-packages/pandas/core/groupby/groupby.py", line 882, in __init__
+    grouper, exclusions, obj = get_grouper(
+  File "/home/tutegomeze/Desktop/AlchemyChallenge-Python/env/lib/python3.8/site-packages/pandas/core/groupby/grouper.py", line 882, in get_grouper
+    raise KeyError(gpr)
+KeyError: 'Categorias'
+INFO:create_db:Connecting...
+INFO:download_data:Downloading data from "museos"
+INFO:download_data:Downloading data from "cines"
+INFO:download_data:Downloading data from "bibliotecas"
+INFO:create_df_cultural:DataFrame Cultural was created!
+INFO:create_db:Cultural Table was created on PostgreSQL!
+INFO:create_db:Connected to the database!
+INFO:create_db:Connecting...
+INFO:download_data:Downloading data from "museos"
+INFO:download_data:Downloading data from "cines"
+INFO:download_data:Downloading data from "bibliotecas"
+INFO:create_df_cultural:DataFrame Cultural was created!
+INFO:create_db:Categoria
+-58.56291300                             1
+Bibliotecas Populares                 1991
+Espacios de Exhibición Patrimonial    1046
+Salas de cine                          327
+dtype: int64
+INFO:create_db:Cultural Table was created on PostgreSQL!
+INFO:create_db:Connected to the database!
+INFO:create_db:Connecting...
+INFO:download_data:Downloading data from "museos"
+INFO:download_data:Downloading data from "cines"
+INFO:download_data:Downloading data from "bibliotecas"
+INFO:create_df_cultural:DataFrame Cultural was created!
+INFO:create_db:                                    Cod_Loc  Id_Provincia  Id_Departamento  Provincia  ...  Telefono  Mail  Web  Fuente
+Categoria                                                                              ...                             
+-58.56291300                              1             1                0          1  ...         0     0    0       0
+Bibliotecas Populares                  1991          1991             1991       1991  ...      1991  1991    0    1991
+Espacios de Exhibición Patrimonial     1046          1046             1046       1046  ...       880   266   72    1046
+Salas de cine                           327           327              327        327  ...       327   327  326     326
+
+[4 rows x 12 columns]
+INFO:create_db:Cultural Table was created on PostgreSQL!
+INFO:create_db:Connected to the database!
+INFO:create_db:Connecting...
+INFO:download_data:Downloading data from "museos"
+INFO:download_data:Downloading data from "cines"
+INFO:download_data:Downloading data from "bibliotecas"
+INFO:create_df_cultural:DataFrame Cultural was created!
+INFO:create_db:                            Categoria  total
+0                        -58.56291300      1
+1               Bibliotecas Populares   1991
+2  Espacios de Exhibición Patrimonial   1046
+3                       Salas de cine    327
+INFO:create_db:Cultural Table was created on PostgreSQL!
+INFO:create_db:Connected to the database!
+INFO:create_db:Connecting...
+INFO:download_data:Downloading data from "museos"
+INFO:download_data:Downloading data from "cines"
+INFO:download_data:Downloading data from "bibliotecas"
+INFO:create_df_cultural:DataFrame Cultural was created!
+INFO:create_db:                            Categoria  total
+0                        -58.56291300      1
+1               Bibliotecas Populares   1991
+2  Espacios de Exhibición Patrimonial   1046
+3                       Salas de cine    327
+INFO:create_db:Cultural Table was created on PostgreSQL!
+INFO:create_db:Connected to the database!
+INFO:create_db:Connecting...
+INFO:download_data:Downloading data from "museos"
+INFO:download_data:Downloading data from "cines"
+INFO:download_data:Downloading data from "bibliotecas"
+INFO:create_df_cultural:DataFrame Cultural was created!
+INFO:create_db:Cantidad de registros totales por categoría:                             Categoria  Total
+0                        -58.56291300      1
+1               Bibliotecas Populares   1991
+2  Espacios de Exhibición Patrimonial   1046
+3                       Salas de cine    327
+INFO:create_db:Cultural Table was created on PostgreSQL!
+INFO:create_db:Connected to the database!
+INFO:create_db:Connecting...
+INFO:download_data:Downloading data from "museos"
+INFO:download_data:Downloading data from "cines"
+INFO:download_data:Downloading data from "bibliotecas"
+INFO:create_df_cultural:DataFrame Cultural was created!
+INFO:create_db:Cantidad de registros totales por categoría: 
+                            Categoria  Total
+0                        -58.56291300      1
+1               Bibliotecas Populares   1991
+2  Espacios de Exhibición Patrimonial   1046
+3                       Salas de cine    327
+INFO:create_db:Cultural Table was created on PostgreSQL!
+INFO:create_db:Connected to the database!
