@@ -4,104 +4,542 @@ INFO:download_data:Downloading data from "cines"
 INFO:download_data:Downloading data from "bibliotecas"
 INFO:create_df_cultural:DataFrame Cultural was created!
 INFO:create_db:Cultural Table was created on PostgreSQL!
-INFO:create_db:Connected to the database!
-INFO:create_db:Connecting...
-INFO:download_data:Downloading data from "museos"
-INFO:download_data:Downloading data from "cines"
-INFO:download_data:Downloading data from "bibliotecas"
-INFO:create_df_cultural:DataFrame Cultural was created!
-ERROR:create_db:Connection failed.
-Traceback (most recent call last):
-  File "/home/tutegomeze/Desktop/AlchemyChallenge-Python/create_db.py", line 53, in create_database
-    df_registros = df_cultural.groupby(['Categorias']).size()
-  File "/home/tutegomeze/Desktop/AlchemyChallenge-Python/env/lib/python3.8/site-packages/pandas/core/frame.py", line 7706, in groupby
-    return DataFrameGroupBy(
-  File "/home/tutegomeze/Desktop/AlchemyChallenge-Python/env/lib/python3.8/site-packages/pandas/core/groupby/groupby.py", line 882, in __init__
-    grouper, exclusions, obj = get_grouper(
-  File "/home/tutegomeze/Desktop/AlchemyChallenge-Python/env/lib/python3.8/site-packages/pandas/core/groupby/grouper.py", line 882, in get_grouper
-    raise KeyError(gpr)
-KeyError: 'Categorias'
-INFO:create_db:Connecting...
-INFO:download_data:Downloading data from "museos"
-INFO:download_data:Downloading data from "cines"
-INFO:download_data:Downloading data from "bibliotecas"
-INFO:create_df_cultural:DataFrame Cultural was created!
-INFO:create_db:Cultural Table was created on PostgreSQL!
-INFO:create_db:Connected to the database!
-INFO:create_db:Connecting...
-INFO:download_data:Downloading data from "museos"
-INFO:download_data:Downloading data from "cines"
-INFO:download_data:Downloading data from "bibliotecas"
-INFO:create_df_cultural:DataFrame Cultural was created!
-INFO:create_db:Categoria
--58.56291300                             1
-Bibliotecas Populares                 1991
-Espacios de Exhibición Patrimonial    1046
-Salas de cine                          327
-dtype: int64
-INFO:create_db:Cultural Table was created on PostgreSQL!
-INFO:create_db:Connected to the database!
-INFO:create_db:Connecting...
-INFO:download_data:Downloading data from "museos"
-INFO:download_data:Downloading data from "cines"
-INFO:download_data:Downloading data from "bibliotecas"
-INFO:create_df_cultural:DataFrame Cultural was created!
-INFO:create_db:                                    Cod_Loc  Id_Provincia  Id_Departamento  Provincia  ...  Telefono  Mail  Web  Fuente
-Categoria                                                                              ...                             
--58.56291300                              1             1                0          1  ...         0     0    0       0
-Bibliotecas Populares                  1991          1991             1991       1991  ...      1991  1991    0    1991
-Espacios de Exhibición Patrimonial     1046          1046             1046       1046  ...       880   266   72    1046
-Salas de cine                           327           327              327        327  ...       327   327  326     326
+INFO:create_db:Cantidad de registros totales por 'Categoria': 
 
-[4 rows x 12 columns]
-INFO:create_db:Cultural Table was created on PostgreSQL!
-INFO:create_db:Connected to the database!
-INFO:create_db:Connecting...
-INFO:download_data:Downloading data from "museos"
-INFO:download_data:Downloading data from "cines"
-INFO:download_data:Downloading data from "bibliotecas"
-INFO:create_df_cultural:DataFrame Cultural was created!
-INFO:create_db:                            Categoria  total
-0                        -58.56291300      1
-1               Bibliotecas Populares   1991
-2  Espacios de Exhibición Patrimonial   1046
-3                       Salas de cine    327
-INFO:create_db:Cultural Table was created on PostgreSQL!
-INFO:create_db:Connected to the database!
-INFO:create_db:Connecting...
-INFO:download_data:Downloading data from "museos"
-INFO:download_data:Downloading data from "cines"
-INFO:download_data:Downloading data from "bibliotecas"
-INFO:create_df_cultural:DataFrame Cultural was created!
-INFO:create_db:                            Categoria  total
-0                        -58.56291300      1
-1               Bibliotecas Populares   1991
-2  Espacios de Exhibición Patrimonial   1046
-3                       Salas de cine    327
-INFO:create_db:Cultural Table was created on PostgreSQL!
-INFO:create_db:Connected to the database!
-INFO:create_db:Connecting...
-INFO:download_data:Downloading data from "museos"
-INFO:download_data:Downloading data from "cines"
-INFO:download_data:Downloading data from "bibliotecas"
-INFO:create_df_cultural:DataFrame Cultural was created!
-INFO:create_db:Cantidad de registros totales por categoría:                             Categoria  Total
-0                        -58.56291300      1
-1               Bibliotecas Populares   1991
-2  Espacios de Exhibición Patrimonial   1046
-3                       Salas de cine    327
-INFO:create_db:Cultural Table was created on PostgreSQL!
-INFO:create_db:Connected to the database!
-INFO:create_db:Connecting...
-INFO:download_data:Downloading data from "museos"
-INFO:download_data:Downloading data from "cines"
-INFO:download_data:Downloading data from "bibliotecas"
-INFO:create_df_cultural:DataFrame Cultural was created!
-INFO:create_db:Cantidad de registros totales por categoría: 
                             Categoria  Total
 0                        -58.56291300      1
 1               Bibliotecas Populares   1991
 2  Espacios de Exhibición Patrimonial   1046
 3                       Salas de cine    327
+
+INFO:create_db:Cantidad de registros totales por 'Fuente': 
+
+                                               Fuente  Total
+0                                CNMLH - Enlace SInCA      1
+1                                             CONABIP   1988
+2                                               DNPyM    923
+3   Dirección Provincial de Patrimonio Cultural - ...      1
+4               Dirección de Cultura de Villa Allende      2
+5   Dirección de Cultura y de Educación de la Muni...      1
+6                            Gobierno de la Provincia     13
+7     Gobierno de la Provincia de Chubut / SInCA 2013      3
+8                   Gobierno de la Provincia de Jujuy      4
+9                Gobierno de la Provincia de La Pampa      1
+10               Gobierno de la Provincia de La Rioja      1
+11                Gobierno de la Provincia de Mendoza      4
+12                Gobierno de la Provincia de Neuquén      1
+13                  Gobierno de la Provincia de Salta      1
+14               Gobierno de la Provincia de San Juan      3
+15                           Gobierno de la provincia      1
+16                                      INCAA / SInCA    326
+17                     Municipalidad de Puerto Madryn      2
+18  Municipalidad de Río Gallegos - Red de Ciudade...      4
+19  Municipalidad de Santa Fe - Red de Ciudades Cr...     37
+20                                                RCC     10
+21                                       RCC- Córdoba     24
+22           Red de Espacios Culturales Vicente López      4
+23                                              SInCA      1
+24                   Secretaria de Cultura Provincial      3
+25  Secretaria de Cultura del Municipio de Esteban...      1
+26                                               UNLA      1
+27  Área Gestión Cultural de la Municipalidad de C...      2
+
+INFO:create_db:Cantidad de registros totales por 'Provincia' y 'Categoria': 
+
+           Provincia                           Categoria  Total
+0       Buenos Aires               Bibliotecas Populares    540
+1       Buenos Aires  Espacios de Exhibición Patrimonial    139
+2       Buenos Aires                       Salas de cine    106
+3          Catamarca               Bibliotecas Populares     36
+4          Catamarca  Espacios de Exhibición Patrimonial     27
+..               ...                                 ...    ...
+68  Tierra del Fuego               Bibliotecas Populares      9
+69  Tierra del Fuego                       Salas de cine      3
+70           Tucumán               Bibliotecas Populares     36
+71           Tucumán  Espacios de Exhibición Patrimonial     24
+72           Tucumán                       Salas de cine      8
+
+[73 rows x 3 columns]
+
+INFO:create_db:Connected to the database!
+INFO:create_db:Connecting...
+INFO:download_data:Downloading data from "museos"
+INFO:download_data:Downloading data from "cines"
+INFO:download_data:Downloading data from "bibliotecas"
+INFO:create_df_cultural:DataFrame Cultural was created!
 INFO:create_db:Cultural Table was created on PostgreSQL!
+INFO:create_db:Cantidad de registros totales por 'Categoria': 
+
+                            Categoria  Total
+0                        -58.56291300      1
+1               Bibliotecas Populares   1991
+2  Espacios de Exhibición Patrimonial   1046
+3                       Salas de cine    327
+
+INFO:create_db:Cantidad de registros totales por 'Fuente': 
+
+                                               Fuente  Total
+0                                CNMLH - Enlace SInCA      1
+1                                             CONABIP   1988
+2                                               DNPyM    923
+3   Dirección Provincial de Patrimonio Cultural - ...      1
+4               Dirección de Cultura de Villa Allende      2
+5   Dirección de Cultura y de Educación de la Muni...      1
+6                            Gobierno de la Provincia     13
+7     Gobierno de la Provincia de Chubut / SInCA 2013      3
+8                   Gobierno de la Provincia de Jujuy      4
+9                Gobierno de la Provincia de La Pampa      1
+10               Gobierno de la Provincia de La Rioja      1
+11                Gobierno de la Provincia de Mendoza      4
+12                Gobierno de la Provincia de Neuquén      1
+13                  Gobierno de la Provincia de Salta      1
+14               Gobierno de la Provincia de San Juan      3
+15                           Gobierno de la provincia      1
+16                                      INCAA / SInCA    326
+17                     Municipalidad de Puerto Madryn      2
+18  Municipalidad de Río Gallegos - Red de Ciudade...      4
+19  Municipalidad de Santa Fe - Red de Ciudades Cr...     37
+20                                                RCC     10
+21                                       RCC- Córdoba     24
+22           Red de Espacios Culturales Vicente López      4
+23                                              SInCA      1
+24                   Secretaria de Cultura Provincial      3
+25  Secretaria de Cultura del Municipio de Esteban...      1
+26                                               UNLA      1
+27  Área Gestión Cultural de la Municipalidad de C...      2
+
+INFO:create_db:Cantidad de registros totales por 'Provincia' y 'Categoria': 
+
+           Provincia                           Categoria  Total
+0       Buenos Aires               Bibliotecas Populares    540
+1       Buenos Aires  Espacios de Exhibición Patrimonial    139
+2       Buenos Aires                       Salas de cine    106
+3          Catamarca               Bibliotecas Populares     36
+4          Catamarca  Espacios de Exhibición Patrimonial     27
+..               ...                                 ...    ...
+68  Tierra del Fuego               Bibliotecas Populares      9
+69  Tierra del Fuego                       Salas de cine      3
+70           Tucumán               Bibliotecas Populares     36
+71           Tucumán  Espacios de Exhibición Patrimonial     24
+72           Tucumán                       Salas de cine      8
+
+[73 rows x 3 columns]
+
+INFO:create_db:Cantidad de registros totales: 
+
+                             Categoria   Total  ...                           Categoria  Total
+0                         -58.56291300     1.0  ...               Bibliotecas Populares    540
+1                Bibliotecas Populares  1991.0  ...  Espacios de Exhibición Patrimonial    139
+2   Espacios de Exhibición Patrimonial  1046.0  ...                       Salas de cine    106
+3                        Salas de cine   327.0  ...               Bibliotecas Populares     36
+4                                  NaN     NaN  ...  Espacios de Exhibición Patrimonial     27
+..                                 ...     ...  ...                                 ...    ...
+68                                 NaN     NaN  ...               Bibliotecas Populares      9
+69                                 NaN     NaN  ...                       Salas de cine      3
+70                                 NaN     NaN  ...               Bibliotecas Populares     36
+71                                 NaN     NaN  ...  Espacios de Exhibición Patrimonial     24
+72                                 NaN     NaN  ...                       Salas de cine      8
+
+[73 rows x 7 columns]
+
+INFO:create_db:Connected to the database!
+INFO:create_db:Connecting...
+INFO:download_data:Downloading data from "museos"
+INFO:download_data:Downloading data from "cines"
+INFO:download_data:Downloading data from "bibliotecas"
+INFO:create_df_cultural:DataFrame Cultural was created!
+INFO:create_db:Cultural Table was created on PostgreSQL!
+INFO:create_db:Cantidad de registros totales por 'Categoria': 
+
+                            Categoria  Total
+0                        -58.56291300      1
+1               Bibliotecas Populares   1991
+2  Espacios de Exhibición Patrimonial   1046
+3                       Salas de cine    327
+
+INFO:create_db:Cantidad de registros totales por 'Fuente': 
+
+                                               Fuente  Total
+0                                CNMLH - Enlace SInCA      1
+1                                             CONABIP   1988
+2                                               DNPyM    923
+3   Dirección Provincial de Patrimonio Cultural - ...      1
+4               Dirección de Cultura de Villa Allende      2
+5   Dirección de Cultura y de Educación de la Muni...      1
+6                            Gobierno de la Provincia     13
+7     Gobierno de la Provincia de Chubut / SInCA 2013      3
+8                   Gobierno de la Provincia de Jujuy      4
+9                Gobierno de la Provincia de La Pampa      1
+10               Gobierno de la Provincia de La Rioja      1
+11                Gobierno de la Provincia de Mendoza      4
+12                Gobierno de la Provincia de Neuquén      1
+13                  Gobierno de la Provincia de Salta      1
+14               Gobierno de la Provincia de San Juan      3
+15                           Gobierno de la provincia      1
+16                                      INCAA / SInCA    326
+17                     Municipalidad de Puerto Madryn      2
+18  Municipalidad de Río Gallegos - Red de Ciudade...      4
+19  Municipalidad de Santa Fe - Red de Ciudades Cr...     37
+20                                                RCC     10
+21                                       RCC- Córdoba     24
+22           Red de Espacios Culturales Vicente López      4
+23                                              SInCA      1
+24                   Secretaria de Cultura Provincial      3
+25  Secretaria de Cultura del Municipio de Esteban...      1
+26                                               UNLA      1
+27  Área Gestión Cultural de la Municipalidad de C...      2
+
+INFO:create_db:Cantidad de registros totales por 'Provincia' y 'Categoria': 
+
+           Provincia                           Categoria  Total
+0       Buenos Aires               Bibliotecas Populares    540
+1       Buenos Aires  Espacios de Exhibición Patrimonial    139
+2       Buenos Aires                       Salas de cine    106
+3          Catamarca               Bibliotecas Populares     36
+4          Catamarca  Espacios de Exhibición Patrimonial     27
+..               ...                                 ...    ...
+68  Tierra del Fuego               Bibliotecas Populares      9
+69  Tierra del Fuego                       Salas de cine      3
+70           Tucumán               Bibliotecas Populares     36
+71           Tucumán  Espacios de Exhibición Patrimonial     24
+72           Tucumán                       Salas de cine      8
+
+[73 rows x 3 columns]
+
+INFO:create_db:Cantidad de registros totales: 
+
+                             Categoria   Total  ...                           Categoria  Total
+0                         -58.56291300     1.0  ...               Bibliotecas Populares    540
+1                Bibliotecas Populares  1991.0  ...  Espacios de Exhibición Patrimonial    139
+2   Espacios de Exhibición Patrimonial  1046.0  ...                       Salas de cine    106
+3                        Salas de cine   327.0  ...               Bibliotecas Populares     36
+4                                  NaN     NaN  ...  Espacios de Exhibición Patrimonial     27
+..                                 ...     ...  ...                                 ...    ...
+68                                 NaN     NaN  ...               Bibliotecas Populares      9
+69                                 NaN     NaN  ...                       Salas de cine      3
+70                                 NaN     NaN  ...               Bibliotecas Populares     36
+71                                 NaN     NaN  ...  Espacios de Exhibición Patrimonial     24
+72                                 NaN     NaN  ...                       Salas de cine      8
+
+[73 rows x 7 columns]
+
+INFO:create_db:Connected to the database!
+INFO:create_db:Connecting...
+INFO:download_data:Downloading data from "museos"
+INFO:download_data:Downloading data from "cines"
+INFO:download_data:Downloading data from "bibliotecas"
+INFO:create_df_cultural:DataFrame Cultural was created!
+INFO:create_db:Cultural Table was created on PostgreSQL!
+INFO:create_db:Cantidad de registros totales por 'Categoria': 
+
+                            Categoria  Total
+0                        -58.56291300      1
+1               Bibliotecas Populares   1991
+2  Espacios de Exhibición Patrimonial   1046
+3                       Salas de cine    327
+
+INFO:create_db:Cantidad de registros totales por 'Fuente': 
+
+                                               Fuente  Total
+0                                CNMLH - Enlace SInCA      1
+1                                             CONABIP   1988
+2                                               DNPyM    923
+3   Dirección Provincial de Patrimonio Cultural - ...      1
+4               Dirección de Cultura de Villa Allende      2
+5   Dirección de Cultura y de Educación de la Muni...      1
+6                            Gobierno de la Provincia     13
+7     Gobierno de la Provincia de Chubut / SInCA 2013      3
+8                   Gobierno de la Provincia de Jujuy      4
+9                Gobierno de la Provincia de La Pampa      1
+10               Gobierno de la Provincia de La Rioja      1
+11                Gobierno de la Provincia de Mendoza      4
+12                Gobierno de la Provincia de Neuquén      1
+13                  Gobierno de la Provincia de Salta      1
+14               Gobierno de la Provincia de San Juan      3
+15                           Gobierno de la provincia      1
+16                                      INCAA / SInCA    326
+17                     Municipalidad de Puerto Madryn      2
+18  Municipalidad de Río Gallegos - Red de Ciudade...      4
+19  Municipalidad de Santa Fe - Red de Ciudades Cr...     37
+20                                                RCC     10
+21                                       RCC- Córdoba     24
+22           Red de Espacios Culturales Vicente López      4
+23                                              SInCA      1
+24                   Secretaria de Cultura Provincial      3
+25  Secretaria de Cultura del Municipio de Esteban...      1
+26                                               UNLA      1
+27  Área Gestión Cultural de la Municipalidad de C...      2
+
+INFO:create_db:Cantidad de registros totales por 'Provincia' y 'Categoria': 
+
+           Provincia                           Categoria  Total
+0       Buenos Aires               Bibliotecas Populares    540
+1       Buenos Aires  Espacios de Exhibición Patrimonial    139
+2       Buenos Aires                       Salas de cine    106
+3          Catamarca               Bibliotecas Populares     36
+4          Catamarca  Espacios de Exhibición Patrimonial     27
+..               ...                                 ...    ...
+68  Tierra del Fuego               Bibliotecas Populares      9
+69  Tierra del Fuego                       Salas de cine      3
+70           Tucumán               Bibliotecas Populares     36
+71           Tucumán  Espacios de Exhibición Patrimonial     24
+72           Tucumán                       Salas de cine      8
+
+[73 rows x 3 columns]
+
+INFO:create_db:Cantidad de registros totales: 
+
+                             Categoria   Total  ...                           Categoria  Total
+0                         -58.56291300     1.0  ...               Bibliotecas Populares    540
+1                Bibliotecas Populares  1991.0  ...  Espacios de Exhibición Patrimonial    139
+2   Espacios de Exhibición Patrimonial  1046.0  ...                       Salas de cine    106
+3                        Salas de cine   327.0  ...               Bibliotecas Populares     36
+4                                  NaN     NaN  ...  Espacios de Exhibición Patrimonial     27
+..                                 ...     ...  ...                                 ...    ...
+68                                 NaN     NaN  ...               Bibliotecas Populares      9
+69                                 NaN     NaN  ...                       Salas de cine      3
+70                                 NaN     NaN  ...               Bibliotecas Populares     36
+71                                 NaN     NaN  ...  Espacios de Exhibición Patrimonial     24
+72                                 NaN     NaN  ...                       Salas de cine      8
+
+[73 rows x 7 columns]
+
+INFO:create_db:Records Table was created on PostgreSQL!
+INFO:create_db:Connected to the database!
+INFO:create_db:Connecting...
+INFO:download_data:Downloading data from "museos"
+INFO:download_data:Downloading data from "cines"
+INFO:download_data:Downloading data from "bibliotecas"
+INFO:create_df_cultural:DataFrame Cultural was created!
+INFO:create_db:Cultural Table was created on PostgreSQL!
+INFO:create_df_registros:Cantidad de registros totales por 'Categoria': 
+
+                            Categoria  Total
+0                        -58.56291300      1
+1               Bibliotecas Populares   1991
+2  Espacios de Exhibición Patrimonial   1046
+3                       Salas de cine    327
+
+INFO:create_df_registros:Cantidad de registros totales por 'Fuente': 
+
+                                               Fuente  Total
+0                                CNMLH - Enlace SInCA      1
+1                                             CONABIP   1988
+2                                               DNPyM    923
+3   Dirección Provincial de Patrimonio Cultural - ...      1
+4               Dirección de Cultura de Villa Allende      2
+5   Dirección de Cultura y de Educación de la Muni...      1
+6                            Gobierno de la Provincia     13
+7     Gobierno de la Provincia de Chubut / SInCA 2013      3
+8                   Gobierno de la Provincia de Jujuy      4
+9                Gobierno de la Provincia de La Pampa      1
+10               Gobierno de la Provincia de La Rioja      1
+11                Gobierno de la Provincia de Mendoza      4
+12                Gobierno de la Provincia de Neuquén      1
+13                  Gobierno de la Provincia de Salta      1
+14               Gobierno de la Provincia de San Juan      3
+15                           Gobierno de la provincia      1
+16                                      INCAA / SInCA    326
+17                     Municipalidad de Puerto Madryn      2
+18  Municipalidad de Río Gallegos - Red de Ciudade...      4
+19  Municipalidad de Santa Fe - Red de Ciudades Cr...     37
+20                                                RCC     10
+21                                       RCC- Córdoba     24
+22           Red de Espacios Culturales Vicente López      4
+23                                              SInCA      1
+24                   Secretaria de Cultura Provincial      3
+25  Secretaria de Cultura del Municipio de Esteban...      1
+26                                               UNLA      1
+27  Área Gestión Cultural de la Municipalidad de C...      2
+
+INFO:create_df_registros:Cantidad de registros totales por 'Provincia' y 'Categoria': 
+
+           Provincia                           Categoria  Total
+0       Buenos Aires               Bibliotecas Populares    540
+1       Buenos Aires  Espacios de Exhibición Patrimonial    139
+2       Buenos Aires                       Salas de cine    106
+3          Catamarca               Bibliotecas Populares     36
+4          Catamarca  Espacios de Exhibición Patrimonial     27
+..               ...                                 ...    ...
+68  Tierra del Fuego               Bibliotecas Populares      9
+69  Tierra del Fuego                       Salas de cine      3
+70           Tucumán               Bibliotecas Populares     36
+71           Tucumán  Espacios de Exhibición Patrimonial     24
+72           Tucumán                       Salas de cine      8
+
+[73 rows x 3 columns]
+
+ERROR:create_db:Connection failed.
+Traceback (most recent call last):
+  File "/home/tutegomeze/Desktop/AlchemyChallenge-Python/create_db.py", line 56, in create_database
+    df_registros = create_df_registros(df_cultural)
+  File "/home/tutegomeze/Desktop/AlchemyChallenge-Python/create_df_registros.py", line 28, in create_df_registros
+    logger.info(f"Cantidad de registros totales: \n\n{df_registros}\n")
+UnboundLocalError: local variable 'df_registros' referenced before assignment
+INFO:create_db:Connecting...
+INFO:download_data:Downloading data from "museos"
+INFO:download_data:Downloading data from "cines"
+INFO:download_data:Downloading data from "bibliotecas"
+INFO:create_df_cultural:DataFrame Cultural was created!
+INFO:create_db:Cultural Table was created on PostgreSQL!
+INFO:create_df_registros:Cantidad de registros totales por 'Categoria': 
+
+                            Categoria  Total
+0                        -58.56291300      1
+1               Bibliotecas Populares   1991
+2  Espacios de Exhibición Patrimonial   1046
+3                       Salas de cine    327
+
+INFO:create_df_registros:Cantidad de registros totales por 'Fuente': 
+
+                                               Fuente  Total
+0                                CNMLH - Enlace SInCA      1
+1                                             CONABIP   1988
+2                                               DNPyM    923
+3   Dirección Provincial de Patrimonio Cultural - ...      1
+4               Dirección de Cultura de Villa Allende      2
+5   Dirección de Cultura y de Educación de la Muni...      1
+6                            Gobierno de la Provincia     13
+7     Gobierno de la Provincia de Chubut / SInCA 2013      3
+8                   Gobierno de la Provincia de Jujuy      4
+9                Gobierno de la Provincia de La Pampa      1
+10               Gobierno de la Provincia de La Rioja      1
+11                Gobierno de la Provincia de Mendoza      4
+12                Gobierno de la Provincia de Neuquén      1
+13                  Gobierno de la Provincia de Salta      1
+14               Gobierno de la Provincia de San Juan      3
+15                           Gobierno de la provincia      1
+16                                      INCAA / SInCA    326
+17                     Municipalidad de Puerto Madryn      2
+18  Municipalidad de Río Gallegos - Red de Ciudade...      4
+19  Municipalidad de Santa Fe - Red de Ciudades Cr...     37
+20                                                RCC     10
+21                                       RCC- Córdoba     24
+22           Red de Espacios Culturales Vicente López      4
+23                                              SInCA      1
+24                   Secretaria de Cultura Provincial      3
+25  Secretaria de Cultura del Municipio de Esteban...      1
+26                                               UNLA      1
+27  Área Gestión Cultural de la Municipalidad de C...      2
+
+INFO:create_df_registros:Cantidad de registros totales por 'Provincia' y 'Categoria': 
+
+           Provincia                           Categoria  Total
+0       Buenos Aires               Bibliotecas Populares    540
+1       Buenos Aires  Espacios de Exhibición Patrimonial    139
+2       Buenos Aires                       Salas de cine    106
+3          Catamarca               Bibliotecas Populares     36
+4          Catamarca  Espacios de Exhibición Patrimonial     27
+..               ...                                 ...    ...
+68  Tierra del Fuego               Bibliotecas Populares      9
+69  Tierra del Fuego                       Salas de cine      3
+70           Tucumán               Bibliotecas Populares     36
+71           Tucumán  Espacios de Exhibición Patrimonial     24
+72           Tucumán                       Salas de cine      8
+
+[73 rows x 3 columns]
+
+INFO:create_df_registros:Cantidad de registros totales: 
+
+                             Categoria   Total  ...                           Categoria  Total
+0                         -58.56291300     1.0  ...               Bibliotecas Populares    540
+1                Bibliotecas Populares  1991.0  ...  Espacios de Exhibición Patrimonial    139
+2   Espacios de Exhibición Patrimonial  1046.0  ...                       Salas de cine    106
+3                        Salas de cine   327.0  ...               Bibliotecas Populares     36
+4                                  NaN     NaN  ...  Espacios de Exhibición Patrimonial     27
+..                                 ...     ...  ...                                 ...    ...
+68                                 NaN     NaN  ...               Bibliotecas Populares      9
+69                                 NaN     NaN  ...                       Salas de cine      3
+70                                 NaN     NaN  ...               Bibliotecas Populares     36
+71                                 NaN     NaN  ...  Espacios de Exhibición Patrimonial     24
+72                                 NaN     NaN  ...                       Salas de cine      8
+
+[73 rows x 7 columns]
+
+ERROR:create_db:Connection failed.
+Traceback (most recent call last):
+  File "/home/tutegomeze/Desktop/AlchemyChallenge-Python/create_db.py", line 57, in create_database
+    df_registros.to_sql('registros', con=engine, if_exists='replace')
+AttributeError: 'NoneType' object has no attribute 'to_sql'
+INFO:create_db:Connecting...
+INFO:download_data:Downloading data from "museos"
+INFO:download_data:Downloading data from "cines"
+INFO:download_data:Downloading data from "bibliotecas"
+INFO:create_df_cultural:DataFrame Cultural was created!
+INFO:create_db:Cultural Table was created on PostgreSQL!
+INFO:create_df_registros:Cantidad de registros totales por 'Categoria': 
+
+                            Categoria  Total
+0                        -58.56291300      1
+1               Bibliotecas Populares   1991
+2  Espacios de Exhibición Patrimonial   1046
+3                       Salas de cine    327
+
+INFO:create_df_registros:Cantidad de registros totales por 'Fuente': 
+
+                                               Fuente  Total
+0                                CNMLH - Enlace SInCA      1
+1                                             CONABIP   1988
+2                                               DNPyM    923
+3   Dirección Provincial de Patrimonio Cultural - ...      1
+4               Dirección de Cultura de Villa Allende      2
+5   Dirección de Cultura y de Educación de la Muni...      1
+6                            Gobierno de la Provincia     13
+7     Gobierno de la Provincia de Chubut / SInCA 2013      3
+8                   Gobierno de la Provincia de Jujuy      4
+9                Gobierno de la Provincia de La Pampa      1
+10               Gobierno de la Provincia de La Rioja      1
+11                Gobierno de la Provincia de Mendoza      4
+12                Gobierno de la Provincia de Neuquén      1
+13                  Gobierno de la Provincia de Salta      1
+14               Gobierno de la Provincia de San Juan      3
+15                           Gobierno de la provincia      1
+16                                      INCAA / SInCA    326
+17                     Municipalidad de Puerto Madryn      2
+18  Municipalidad de Río Gallegos - Red de Ciudade...      4
+19  Municipalidad de Santa Fe - Red de Ciudades Cr...     37
+20                                                RCC     10
+21                                       RCC- Córdoba     24
+22           Red de Espacios Culturales Vicente López      4
+23                                              SInCA      1
+24                   Secretaria de Cultura Provincial      3
+25  Secretaria de Cultura del Municipio de Esteban...      1
+26                                               UNLA      1
+27  Área Gestión Cultural de la Municipalidad de C...      2
+
+INFO:create_df_registros:Cantidad de registros totales por 'Provincia' y 'Categoria': 
+
+           Provincia                           Categoria  Total
+0       Buenos Aires               Bibliotecas Populares    540
+1       Buenos Aires  Espacios de Exhibición Patrimonial    139
+2       Buenos Aires                       Salas de cine    106
+3          Catamarca               Bibliotecas Populares     36
+4          Catamarca  Espacios de Exhibición Patrimonial     27
+..               ...                                 ...    ...
+68  Tierra del Fuego               Bibliotecas Populares      9
+69  Tierra del Fuego                       Salas de cine      3
+70           Tucumán               Bibliotecas Populares     36
+71           Tucumán  Espacios de Exhibición Patrimonial     24
+72           Tucumán                       Salas de cine      8
+
+[73 rows x 3 columns]
+
+INFO:create_df_registros:Cantidad de registros totales: 
+
+                             Categoria   Total  ...                           Categoria  Total
+0                         -58.56291300     1.0  ...               Bibliotecas Populares    540
+1                Bibliotecas Populares  1991.0  ...  Espacios de Exhibición Patrimonial    139
+2   Espacios de Exhibición Patrimonial  1046.0  ...                       Salas de cine    106
+3                        Salas de cine   327.0  ...               Bibliotecas Populares     36
+4                                  NaN     NaN  ...  Espacios de Exhibición Patrimonial     27
+..                                 ...     ...  ...                                 ...    ...
+68                                 NaN     NaN  ...               Bibliotecas Populares      9
+69                                 NaN     NaN  ...                       Salas de cine      3
+70                                 NaN     NaN  ...               Bibliotecas Populares     36
+71                                 NaN     NaN  ...  Espacios de Exhibición Patrimonial     24
+72                                 NaN     NaN  ...                       Salas de cine      8
+
+[73 rows x 7 columns]
+
+INFO:create_db:Registros Table was created on PostgreSQL!
 INFO:create_db:Connected to the database!
