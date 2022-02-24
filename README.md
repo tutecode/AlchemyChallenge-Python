@@ -3,18 +3,11 @@
 
 ## 1. Create Virtual ENV
 
-1. Open Terminal
-2. cd Desktop
-3. mkdir AlchemyChallenge-Python
-4. cd AlchemyChallenge-Python
-
 - Create env
 
 ```bash
 virtualenv env
 ```
-
-https://stackoverflow.com/questions/12728004/error-no-module-named-psycopg2-extensions
 
 - Activate env
 
@@ -54,7 +47,7 @@ psql
 - Create database (db)
 
 ```bash
-create database cultural;
+create database gov_db;
 
     CREATE DATABASE
     postgres=#
@@ -69,9 +62,15 @@ create database cultural;
 - Connect to database (db)
 
 ```bash
-\c cultural
+\c gov_db
 
     You are now connected to database "gov_db" as user "postgres".
+```
+
+- List of tables
+
+```bash
+\d
 ```
 
 - If you want to exit postgresql
@@ -86,18 +85,4 @@ exit
 
 ```bash
 python3 main.py
-```
-
-## Connect to the PostgreSQL database using the psycopg2
-
-- Connect to (db)
-
-```bash
-mkdir requirements.txt
-```
-
-- Install libraries
-
-```bash
-pip3 install -r requirements.txt
 ```

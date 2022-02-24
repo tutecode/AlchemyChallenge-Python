@@ -6,10 +6,9 @@ from sqlalchemy.orm import sessionmaker
 import pandas as pd
 from config import config
 import logging
-from create_df_registros import create_df_registros
 
 from download_data import download_data
-from create_df_cultural import create_df_cultural
+from create_df import create_df_cultural, create_df_registros, create_df_cines
 
 ## Logging
 logger = logging.getLogger(__name__)
@@ -49,24 +48,23 @@ def create_database():
         # create df_cultural --> to_sql
         df_cultural = create_df_cultural(df_museos, df_cines, df_bibliotecas)
         df_cultural.to_sql('cultural', con=engine, if_exists='replace')
+        #df_cultural.to_csv('cultural.csv')
 
-        logger.info('Cultural Table was created on PostgreSQL!')
+        logger.info('Cultural table was created on PostgreSQL!')
 
         # create df_registros --> to_sql
         df_registros = create_df_registros(df_cultural)
         df_registros.to_sql('registros', con=engine, if_exists='replace')
         #df_registros.to_csv('registros.csv')
 
-        logger.info('Registros Table was created on PostgreSQL!')    
+        logger.info('Registros table was created on PostgreSQL!')    
         
+        # create df_cines_prov --> to_sql
+        df_cines_prov = create_df_cines(df_cines)
+        df_cines_prov.to_sql('cines', con=engine, if_exists='replace')
+        #df_cines_prov.to_csv('cines.csv')
 
-        """
-        ## create the session
-        #Session = sessionmaker(bind=engine)
-        #session = Session()
-        #
-        #Base = declarative_base()
-        """
+        logger.info('Cines table was created on PostgreSQL!')    
 
         connection = engine.connect()
 
@@ -80,9 +78,9 @@ def create_database():
         logger.info('Connected to the database!')
 
         #connection.close()
-        
         #logger.info('Closed database.')
         #connection.execute('CREATE TABLE IF NOT EXISTS products (product_name text, price number)')
+        
         return connection
     except:
         return logger.exception('Connection failed.')
