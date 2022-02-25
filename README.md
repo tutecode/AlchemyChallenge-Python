@@ -1,4 +1,4 @@
-# AlchemyChallenge-Python
+# AlkemyChallenge-Python
  Challenge Data Analytics - Python
 
 ## 1. Create Virtual ENV
