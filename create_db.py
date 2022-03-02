@@ -79,7 +79,6 @@ def create_database():
 
         #connection.close()
         #logger.info('Closed database.')
-        #connection.execute('CREATE TABLE IF NOT EXISTS products (product_name text, price number)')
         
         return connection
     except:
